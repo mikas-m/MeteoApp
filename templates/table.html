@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meteo Data</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope='col'>station</th>
+            <th scope='col'>latitude</th>
+            <th scope='col'>longitude</th>
+            <th scope='col'>region</th>
+            <th scope='col'>elevation</th>
+            <th scope='col'>date</th>
+            <th scope='col'>time</th>
+            <th scope='col'>temperature</th>
+            <th scope='col'>temperature_max</th>
+            <th scope='col'>temperature_min</th>
+            <th scope='col'>temperature_trend_hour</th>
+            <th scope='col'>temperature_trend_3hours</th>
+            <th scope='col'>temperature_trend_day</th>
+            <th scope='col'>pressure</th>
+            <th scope='col'>pressure_trend_hour</th>
+            <th scope='col'>pressure_trend_3hours</th>
+            <th scope='col'>pressure_trend_day</th>
+            <th scope='col'>humidity</th>
+            <th scope='col'>humidity_trend_hour</th>
+            <th scope='col'>humidity_trend_3hours</th>
+            <th scope='col'>humidity_trend_day</th>
+            <th scope='col'>precipitation</th>
+            <th scope='col'>precipitation_trend_hour</th>
+            <th scope='col'>precipitation_trend_3hours</th>
+            <th scope='col'>precipitation_trend_day</th>
+            <th scope='col'>wind_speed</th>
+            <th scope='col'>wind_direction</th>
+            <th scope='col'>wind_gust</th>
+            <th scope='col'>wind_gust_max</th>
+            <th scope='col'>wind_gust_max_dir</th>
+            <th scope='col'>wind_chill</th>
+            <th scope='col'>uv_index</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for data in MeteoDatas %}
+            <tr>
+                <td>{{ MeteoDatas.station }}</td>
+                <td>{{ MeteoDatas.latitude }}</td>
+                <td>{{ MeteoDatas.longitude }}</td>
+                <td>{{ MeteoDatas.region }}</td>
+                <td>{{ MeteoDatas.elevation }}</td>
+                <td>{{ MeteoDatas.date }}</td>
+                <td>{{ MeteoDatas.time }}</td>
+                <td>{{ MeteoDatas.temperature }}</td>
+                <td>{{ MeteoDatas.temperature_max }}</td>
+                <td>{{ MeteoDatas.temperature_min }}</td>
+                <td>{{ MeteoDatas.temperature_trend_hour }}</td>
+                <td>{{ MeteoDatas.temperature_trend_3hours }}</td>
+                <td>{{ MeteoDatas.temperature_trend_day }}</td>
+                <td>{{ MeteoDatas.pressure }}</td>
+                <td>{{ MeteoDatas.pressure_trend_hour }}</td>
+                <td>{{ MeteoDatas.pressure_trend_3hours }}</td>
+                <td>{{ MeteoDatas.pressure_trend_day }}</td>
+                <td>{{ MeteoDatas.humidity }}</td>
+                <td>{{ MeteoDatas.humidity_trend_hour }}</td>
+                <td>{{ MeteoDatas.humidity_trend_3hours }}</td>
+                <td>{{ MeteoDatas.humidity_trend_day }}</td>
+                <td>{{ MeteoDatas.precipitation }}</td>
+                <td>{{ MeteoDatas.precipitation_trend_hour }}</td>
+                <td>{{ MeteoDatas.precipitation_trend_3hours }}</td>
+                <td>{{ MeteoDatas.precipitation_trend_day }}</td>
+                <td>{{ MeteoDatas.wind_speed }}</td>
+                <td>{{ MeteoDatas.wind_direction }}</td>
+                <td>{{ MeteoDatas.wind_gust }}</td>
+                <td>{{ MeteoDatas.wind_gust_max }}</td>
+                <td>{{ MeteoDatas.wind_gust_max_dir }}</td>
+                <td>{{ MeteoDatas.wind_chill }}</td>
+                <td>{{ MeteoDatas.uv_index }}</td>
+            </tr>
+        </tbody>
+      </table>
+</body>
+</html>
