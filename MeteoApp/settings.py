@@ -78,15 +78,12 @@ WSGI_APPLICATION = 'MeteoApp.wsgi.application'
 
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mirikoni$proba',
-        'USER': 'mirikoni',
-        'PASSWORD': 'necemociovenoci',
-        'HOST': 'mirikoni.mysql.pythonanywhere-services.com',
-        'PORT': '3306',
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": "mydatabase",
     }
 }
+
 
 
 # Password validation
