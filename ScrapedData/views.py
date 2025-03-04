@@ -1,6 +1,8 @@
-from django.shortcuts import render
 
-# Create your views here.
+from django.shortcuts import render
+from .models import MeteoDatas
+
 
 def table(request):
-    return render(request, 'table.html')
+    meteodatas = MeteoDatas.objects.all()
+    return render(request, 'table.html', {'meteodatas': meteodatas})

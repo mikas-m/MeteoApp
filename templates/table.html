@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meteo Data</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
 </head>
 <body>
     <table class="table">
         <thead>
           <tr>
+            <th scope='col'>izvor_podatka</th>
             <th scope='col'>station</th>
             <th scope='col'>latitude</th>
             <th scope='col'>longitude</th>
@@ -45,40 +46,45 @@
           </tr>
         </thead>
         <tbody>
-            {% for data in MeteoDatas %}
+            {% for data in meteodatas %}
             <tr>
-                <td>{{ MeteoDatas.station }}</td>
-                <td>{{ MeteoDatas.latitude }}</td>
-                <td>{{ MeteoDatas.longitude }}</td>
-                <td>{{ MeteoDatas.region }}</td>
-                <td>{{ MeteoDatas.elevation }}</td>
-                <td>{{ MeteoDatas.date }}</td>
-                <td>{{ MeteoDatas.time }}</td>
-                <td>{{ MeteoDatas.temperature }}</td>
-                <td>{{ MeteoDatas.temperature_max }}</td>
-                <td>{{ MeteoDatas.temperature_min }}</td>
-                <td>{{ MeteoDatas.temperature_trend_hour }}</td>
-                <td>{{ MeteoDatas.temperature_trend_3hours }}</td>
-                <td>{{ MeteoDatas.temperature_trend_day }}</td>
-                <td>{{ MeteoDatas.pressure }}</td>
-                <td>{{ MeteoDatas.pressure_trend_hour }}</td>
-                <td>{{ MeteoDatas.pressure_trend_3hours }}</td>
-                <td>{{ MeteoDatas.pressure_trend_day }}</td>
-                <td>{{ MeteoDatas.humidity }}</td>
-                <td>{{ MeteoDatas.humidity_trend_hour }}</td>
-                <td>{{ MeteoDatas.humidity_trend_3hours }}</td>
-                <td>{{ MeteoDatas.humidity_trend_day }}</td>
-                <td>{{ MeteoDatas.precipitation }}</td>
-                <td>{{ MeteoDatas.precipitation_trend_hour }}</td>
-                <td>{{ MeteoDatas.precipitation_trend_3hours }}</td>
-                <td>{{ MeteoDatas.precipitation_trend_day }}</td>
-                <td>{{ MeteoDatas.wind_speed }}</td>
-                <td>{{ MeteoDatas.wind_direction }}</td>
-                <td>{{ MeteoDatas.wind_gust }}</td>
-                <td>{{ MeteoDatas.wind_gust_max }}</td>
-                <td>{{ MeteoDatas.wind_gust_max_dir }}</td>
-                <td>{{ MeteoDatas.wind_chill }}</td>
-                <td>{{ MeteoDatas.uv_index }}</td>
+                <td>{{ data.izvor_podatka|default_if_none:"" }}</td>
+                <td>{{ data.station|default_if_none:"" }}</td>
+                <td>{{ data.latitude|default_if_none:"" }}</td>
+                <td>{{ data.longitude|default_if_none:"" }}</td>
+                <td>{{ data.region|default_if_none:"" }}</td>
+                <td>{{ data.elevation|default_if_none:"" }}</td>
+                <td>{{ data.date|default_if_none:"" }}</td>
+                <td>{{ data.time|default_if_none:"" }}</td>
+                <td>{{ data.temperature|default_if_none:"" }}</td>
+                <td>{{ data.temperature_max|default_if_none:"" }}</td>
+                <td>{{ data.temperature_min|default_if_none:"" }}</td>
+                <td>{{ data.temperature_trend_hour|default_if_none:"" }}</td>
+                <td>{{ data.temperature_trend_3hours|default_if_none:"" }}</td>
+                <td>{{ data.temperature_trend_day|default_if_none:"" }}</td>
+                <td>{{ data.pressure|default_if_none:"" }}</td>
+                <td>{{ data.pressure_trend_hour|default_if_none:"" }}</td>
+                <td>{{ data.pressure_trend_3hours|default_if_none:"" }}</td>
+                <td>{{ data.pressure_trend_day|default_if_none:"" }}</td>
+                <td>{{ data.humidity|default_if_none:"" }}</td>
+                <td>{{ data.humidity_trend_hour|default_if_none:"" }}</td>
+                <td>{{ data.humidity_trend_3hours|default_if_none:"" }}</td>
+                <td>{{ data.humidity_trend_day|default_if_none:"" }}</td>
+                <td>{{ data.precipitation|default_if_none:"" }}</td>
+                <td>{{ data.precipitation_trend_hour|default_if_none:"" }}</td>
+                <td>{{ data.precipitation_trend_3hours|default_if_none:"" }}</td>
+                <td>{{ data.precipitation_trend_day|default_if_none:"" }}</td>
+                <td>{{ data.wind_speed|default_if_none:"" }}</td>
+                <td>{{ data.wind_direction|default_if_none:"" }}</td>
+                <td>{{ data.wind_gust|default_if_none:"" }}</td>
+                <td>{{ data.wind_gust_max|default_if_none:"" }}</td>
+                <td>{{ data.wind_gust_max_dir|default_if_none:"" }}</td>
+                <td>{{ data.wind_chill|default_if_none:"" }}</td>
+                <td>{{ data.uv_index|default_if_none:"" }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="32" class="text-center">No data available</td>
             </tr>
             {% endfor %}
         </tbody>
